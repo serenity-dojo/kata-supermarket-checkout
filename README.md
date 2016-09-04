@@ -2,7 +2,7 @@
 
 This is a variation of a popular kata described in http://codekata.com/kata/kata01-supermarket-pricing/. The aim of the exercise is to build an automated teller that can check out articles from a shopping cart. 
 
-The supermarket has a catalog with different types of products (rice, apples, milk, toothbrushes,...). Each produce has a price, and the total price of the shopping cart is the total of all the prices.
+The supermarket has a catalog with different types of products (rice, apples, milk, toothbrushes,...). Each product has a price, and the total price of the shopping cart is the total of all the prices.
 
 But the supermarket also runs special deals, e.g.
  - Buy two toothbrushes, get one free
@@ -17,7 +17,7 @@ These are just examples: the actual special deals changes each week, so needs to
 The goal of the exercise is to implement a teller that can handle the following scenarios (and more - use your imagination!)
 
  - The teller should be able to handle a shopping cart with no special deals
- - The client should get a reciept with the list of purchases and the total price.
+ - The client should get a receipt with the list of purchases and the total price.
  - The teller should be able to handle the following scenarios
     - Buy 2 get one free
     - Buy 4 get one free
