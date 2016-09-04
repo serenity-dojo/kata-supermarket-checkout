@@ -23,7 +23,7 @@ The goal of the exercise is to implement a teller that can handle the following 
     - Buy 4 get one free
     - 10% discount on a certain product (e.g. 10% discount on 1kg packets of rice)
     - 20% discount on a certain product if you buy more than 10 (e.g 20% discount on apples for 11 or more apples)
-    - Fixed discounts (e.g. bag of 1kg of oranges costs $4 instead of $5.
+    - Fixed discounts (e.g. bag of 1kg of oranges costs $4 instead of $5).
  
  - The teller should be able to handle combinations of the above scenarios, when there is more than one special deal in the shopping cart items.
 
