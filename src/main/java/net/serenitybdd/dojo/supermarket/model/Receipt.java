@@ -1,9 +1,5 @@
 package net.serenitybdd.dojo.supermarket.model;
 
-import com.google.common.util.concurrent.AtomicDouble;
-
-import java.util.Collection;
-import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class Receipt {

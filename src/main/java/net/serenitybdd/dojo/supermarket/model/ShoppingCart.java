@@ -2,7 +2,6 @@ package net.serenitybdd.dojo.supermarket.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 public class ShoppingCart {
 
