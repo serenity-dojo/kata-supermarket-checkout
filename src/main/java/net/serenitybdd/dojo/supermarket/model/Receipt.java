@@ -1,38 +1,53 @@
 package net.serenitybdd.dojo.supermarket.model;
 
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Receipt {
 
-    public AtomicLong paymentNumber;
-    public static double totalPrice = 0.00;
-    private Products productsInCart;
+    public static AtomicInteger number = new AtomicInteger();
+    public double totalBillAmount = 0.00;
+    public int receiptNumber;
+    private static double calculatedAmount = 0.00;
+    private Products productsPurchased;
 
-    public Receipt(double totalPrice, Products productsInCart) {
-        this.totalPrice = totalPrice;
-        this.productsInCart = productsInCart;
+    public Receipt(int receiptNumber, double totalBillAmount, Products productsPurchased) {
+        this.receiptNumber = receiptNumber;
+        this.totalBillAmount = totalBillAmount;
+        this.productsPurchased = productsPurchased;
     }
 
     public Receipt() {
         //To change body of created methods use File | Settings | File Templates.
     }
 
-    public double getTotalPrice() {
-        return totalPrice;
+    public double getTotalBillAmount() {
+        return calculatedAmount;
     }
 
     public static Receipt calculateBillFor(ShoppingCart theCart) {
         if (theCart.getProducts() != null) {
             Products productsInCart = theCart.getProducts();
-
-            totalPrice += productsInCart.getPrice() * theCart.getQuantity();
-
-            return new Receipt(totalPrice, productsInCart);  //To change body of created methods use File | Settings | File Templates.
+            calculatedAmount = productsInCart.getPrice() * theCart.getQuantity();
+            return new Receipt(number.incrementAndGet(), calculatedAmount, productsInCart);  //To change body of created methods use File | Settings | File Templates.
         } else
             return new Receipt();
     }
 
     public static Receipt calculateDiscountedBillFor(ShoppingCart theCart) {
-        return null;  //To change body of created methods use File | Settings | File Templates.
+        if (theCart.getProducts() != null) {
+            Products productsInCart = theCart.getProducts();
+            if ("Apples" == theCart.getProducts().toString() && theCart.getQuantity() > 10) {
+                calculatedAmount = productsInCart.getPrice() * theCart.getQuantity();
+                double discountPrice = 0.2 * calculatedAmount;
+                calculatedAmount -= discountPrice;
+                return new Receipt(number.incrementAndGet(),calculatedAmount, productsInCart);
+            } else
+                return new Receipt();
+        } else
+            return new Receipt();
+    }
+
+    public Products getProductsPurchased() {
+        return productsPurchased;
     }
 }

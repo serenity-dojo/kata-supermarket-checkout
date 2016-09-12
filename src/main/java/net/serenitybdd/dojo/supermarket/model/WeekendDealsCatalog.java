@@ -10,6 +10,7 @@ package net.serenitybdd.dojo.supermarket.model;
 public class WeekendDealsCatalog implements SupermarketCatalog {
     @Override
     public Receipt checkOut(ShoppingCart theCart) {
+
         return Receipt.calculateDiscountedBillFor(theCart);
     }
 }

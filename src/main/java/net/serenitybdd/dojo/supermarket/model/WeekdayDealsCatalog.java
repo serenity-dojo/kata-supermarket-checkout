@@ -14,5 +14,4 @@ public class WeekdayDealsCatalog implements SupermarketCatalog {
     public Receipt checkOut(ShoppingCart theCart) {
         return Receipt.calculateBillFor(theCart);
     }
-
 }
