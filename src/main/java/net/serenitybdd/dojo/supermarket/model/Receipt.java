@@ -21,7 +21,7 @@ public class Receipt {
     }
 
     public double getTotalBillAmount() {
-        return calculatedAmount;
+        return totalBillAmount;
     }
 
     public static Receipt calculateBillFor(ShoppingCart theCart) {
