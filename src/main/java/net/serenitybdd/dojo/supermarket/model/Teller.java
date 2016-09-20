@@ -10,6 +10,6 @@ public class Teller {
     }
 
     public Receipt checksOutArticlesFrom(ShoppingCart theCart) {
-        return null;
+        return new Receipt();
     }
 }
